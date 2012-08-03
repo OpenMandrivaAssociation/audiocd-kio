@@ -1,12 +1,12 @@
 Name:		kde4-audiocd
-Version:	4.8.95
+Version:	4.9.0
 Release:	1
 Epoch:		3
 Summary:	KDE I/O Slave for Audio CDs
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/audiocd-kio-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/audiocd-kio-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	libcdda-devel
 Buildrequires:	libkcddb-devel

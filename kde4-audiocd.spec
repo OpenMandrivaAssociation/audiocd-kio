@@ -1,5 +1,5 @@
 Name:		kde4-audiocd
-Version: 4.9.0
+Version: 4.9.2
 Release: 1
 Epoch:		3
 Summary:	KDE I/O Slave for Audio CDs

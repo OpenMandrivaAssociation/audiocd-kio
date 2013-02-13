@@ -73,6 +73,7 @@ based on %{name}.
 %changelog
 * Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.0-1
 - New version 4.10.0
+- Update files
 
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.9.4-1
 - New version 4.9.4

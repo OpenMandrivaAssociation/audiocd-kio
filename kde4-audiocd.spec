@@ -23,8 +23,6 @@ KDE I/O Slave for Audio CDs.
 %{_kde_datadir}/config.kcfg/audiocd_*
 %{_kde_services}/audiocd.desktop
 %{_kde_services}/audiocd.protocol
-%{_kde_appsdir}/kconf_update/audiocd.upd
-%{_kde_appsdir}/kconf_update/upgrade-metadata.sh
 %{_kde_appsdir}/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_kde_appsdir}/solid/actions/solid_audiocd.desktop
 %{_kde_docdir}/HTML/en/kioslave/audiocd

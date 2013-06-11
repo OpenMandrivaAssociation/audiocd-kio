@@ -1,16 +1,21 @@
 Summary:	KDE I/O Slave for Audio CDs
 Name:		kde4-audiocd
 Version:	4.10.4
-Release:	1
+Release:	2
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/audiocd-kio-%{version}.tar.xz
+# Patch to fix vorbis encoding by Felix Tiede
+Patch0:		audiocd-kio-4.10.4-vorbis.patch
 BuildRequires:	kdelibs4-devel
 BuildRequires:	cdda-devel
 Buildrequires:	libkcddb-devel
 Buildrequires:	libkcompactdisc-devel
+Buildrequires:	pkgconfig(libcdio_paranoia)
+Buildrequires:	pkgconfig(flac)
+Buildrequires:	pkgconfig(vorbis)
 Conflicts:	kdemultimedia4-core < 3:4.5.71
 
 %description
@@ -62,6 +67,7 @@ based on %{name}.
 
 %prep
 %setup -qn audiocd-kio-%{version}
+%patch0 -p1
 
 %build
 %cmake_kde4
@@ -71,6 +77,10 @@ based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Tue Jun 11 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.4-2
+- Add patch to fix ogg encoding
+- Update BuildRequires
+
 * Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.4-1
 - New version 4.10.4
 

@@ -7,8 +7,6 @@ Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/audiocd-kio-%{version}.tar.xz
-# Patch to fix vorbis encoding by Felix Tiede
-Patch0:		audiocd-kio-4.10.4-vorbis.patch
 BuildRequires:	kdelibs4-devel
 BuildRequires:	cdda-devel
 Buildrequires:	libkcddb-devel
@@ -67,7 +65,6 @@ based on %{name}.
 
 %prep
 %setup -qn audiocd-kio-%{version}
-%patch0 -p1
 
 %build
 %cmake_kde4
@@ -79,6 +76,7 @@ based on %{name}.
 %changelog
 * Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.11.2-1
 - New version 4.11.2
+- Drop no longer needed vorbis patch (fixed in upstream)
 
 * Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.11.1-1
 - New version 4.11.1

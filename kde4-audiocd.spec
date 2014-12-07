@@ -1,7 +1,7 @@
 Summary:	KDE I/O Slave for Audio CDs
 Name:		kde4-audiocd
 Version:	4.14.3
-Release:	1
+Release:	2
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2

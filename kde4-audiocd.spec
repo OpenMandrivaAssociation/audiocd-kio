@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		kde4-audiocd
-Version:	14.12.2
+Version:	15.03.97
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE

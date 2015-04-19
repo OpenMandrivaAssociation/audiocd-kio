@@ -1,14 +1,14 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	KDE I/O Slave for Audio CDs
-Name:		kde4-audiocd
+Name:		audiocd-kio
 Version:	15.03.97
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
-Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/applications/%{version}/src/audiocd-kio-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	cdda-devel
 Buildrequires:	libkcddb-devel

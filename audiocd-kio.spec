@@ -2,17 +2,23 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	16.12.2
+Version:	17.03.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs-devel
-BuildRequires:	cdda-devel
-BuildRequires:	libkcddb-devel
-BuildRequires:	libkcompactdisc-devel
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(KF5Cddb)
+BuildRequires:	cmake(KF5CompactDisc)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5KIO)
 BuildRequires:	pkgconfig(libcdio_paranoia)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(vorbis)
@@ -22,19 +28,24 @@ Conflicts:	kdemultimedia4-core < 3:4.5.71
 KDE I/O Slave for Audio CDs.
 
 %files
-%{_kde_libdir}/kde4/kcm_audiocd.so
-%{_kde_libdir}/kde4/kio_audiocd.so
-%{_kde_libdir}/kde4/libaudiocd_*
-%{_kde_datadir}/config.kcfg/audiocd_*
-%{_kde_services}/audiocd.desktop
-%{_kde_services}/audiocd.protocol
-%{_kde_appsdir}/konqsidebartng/virtual_folders/services/audiocd.desktop
-%{_kde_appsdir}/solid/actions/solid_audiocd.desktop
-%{_kde_docdir}/HTML/en/kioslave/audiocd
+%{_libdir}/qt5/plugins/libaudiocd_encoder_flac.so
+%{_libdir}/qt5/plugins/libaudiocd_encoder_lame.so
+%{_libdir}/qt5/plugins/libaudiocd_encoder_vorbis.so
+%{_libdir}/qt5/plugins/libaudiocd_encoder_wav.so
+%{_libdir}/qt5/plugins/libkcm_audiocd.so
+%{_libdir}/qt5/plugins/libkio_audiocd.so
+%{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
+%{_datadir}/kservices5/audiocd.desktop
+%{_datadir}/kservices5/audiocd.protocol
+%{_datadir}/solid/actions/solid_audiocd.desktop
+%{_datadir}/config.kcfg/audiocd_flac_encoder.kcfg
+%{_datadir}/config.kcfg/audiocd_lame_encoder.kcfg
+%{_datadir}/config.kcfg/audiocd_vorbis_encoder.kcfg
+%doc %{_docdir}/HTML/en/kioslave5/audiocd
 
 #------------------------------------------------------------------------------
 
-%define audiocdplugins_major 4
+%define audiocdplugins_major 5
 %define libaudiocdplugins %mklibname audiocdplugins %{audiocdplugins_major}
 
 %package -n %{libaudiocdplugins}
@@ -45,7 +56,7 @@ Group:		System/Libraries
 KDE I/O Slave for Audio CDs library using cdparanoia.
 
 %files -n %{libaudiocdplugins}
-%{_kde_libdir}/libaudiocdplugins.so.%{audiocdplugins_major}*
+%{_libdir}/libaudiocdplugins.so.%{audiocdplugins_major}*
 
 #--------------------------------------------------------------------
 
@@ -69,8 +80,8 @@ based on %{name}.
 %setup -qn audiocd-kio-%{version}
 
 %build
-%cmake_kde4 -DCMAKE_MINIMUM_REQUIRED_VERSION=2.6
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build

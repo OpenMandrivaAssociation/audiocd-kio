@@ -23,6 +23,7 @@ BuildRequires:	cdda-devel
 BuildRequires:	pkgconfig(libcdio_paranoia)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(vorbis)
+BuildRequires:	pkgconfig(alsa)
 Conflicts:	kdemultimedia4-core < 3:4.5.71
 
 %description

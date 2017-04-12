@@ -19,6 +19,7 @@ BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cdda-devel
 BuildRequires:	pkgconfig(libcdio_paranoia)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(vorbis)

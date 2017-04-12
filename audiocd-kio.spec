@@ -73,8 +73,8 @@ This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files devel
-%{_kde_libdir}/libaudiocdplugins.so
-%{_kde_includedir}/*
+%{_kde5_libdir}/libaudiocdplugins.so
+%{_kde5_includedir}/*
 
 #--------------------------------------------------------------------
 

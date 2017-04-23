@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -29,7 +29,7 @@ Conflicts:	kdemultimedia4-core < 3:4.5.71
 %description
 KDE I/O Slave for Audio CDs.
 
-%files
+%files -f all.lang
 %{_libdir}/qt5/plugins/libaudiocd_encoder_flac.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_lame.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_vorbis.so
@@ -43,7 +43,6 @@ KDE I/O Slave for Audio CDs.
 %{_datadir}/config.kcfg/audiocd_flac_encoder.kcfg
 %{_datadir}/config.kcfg/audiocd_lame_encoder.kcfg
 %{_datadir}/config.kcfg/audiocd_vorbis_encoder.kcfg
-%doc %{_docdir}/HTML/en/kioslave5/audiocd
 
 #------------------------------------------------------------------------------
 
@@ -87,3 +86,10 @@ based on %{name}.
 
 %install
 %ninja_install -C build
+%find_lang audiocd_encoder_flac
+%find_lang audiocd_encoder_lame
+%find_lang audiocd_encoder_vorbis
+%find_lang kcmaudiocd
+%find_lang kio_audiocd
+%find_lang kioslave5 --with-html
+cat *.lang >all.lang

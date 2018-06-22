@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE

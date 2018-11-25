@@ -1,8 +1,8 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	 18.08.3
+Version:	18.11.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -30,6 +30,7 @@ Conflicts:	kdemultimedia4-core < 3:4.5.71
 KDE I/O Slave for Audio CDs.
 
 %files -f all.lang
+%{_sysconfdir}/xdg/kio_audiocd.categories
 %{_libdir}/qt5/plugins/libaudiocd_encoder_flac.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_lame.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_vorbis.so
@@ -39,6 +40,7 @@ KDE I/O Slave for Audio CDs.
 %{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/kservices5/audiocd.desktop
 %{_datadir}/kservices5/audiocd.protocol
+%{_datadir}/metainfo/org.kde.kio_audiocd.appdata.xml
 %{_datadir}/solid/actions/solid_audiocd.desktop
 %{_datadir}/config.kcfg/audiocd_flac_encoder.kcfg
 %{_datadir}/config.kcfg/audiocd_lame_encoder.kcfg

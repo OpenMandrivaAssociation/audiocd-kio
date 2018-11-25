@@ -1,4 +1,2 @@
-removed_sources:
-  audiocd-kio-17.12.1.tar.xz: 576d33ec98ca5d82e38b3abbf454cc1cd4ae3474
 sources:
-  audiocd-kio-18.08.3.tar.xz: 07a244b2b778c927e66a9798cb7e9623f58185d9
+  audiocd-kio-18.11.80.tar.xz: 39fabac08e37a85871c9c035517276ae2f298ec9

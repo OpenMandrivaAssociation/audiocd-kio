@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	18.12.0
+Version:	18.12.1
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -36,7 +36,7 @@ KDE I/O Slave for Audio CDs.
 %{_libdir}/qt5/plugins/libaudiocd_encoder_lame.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_vorbis.so
 %{_libdir}/qt5/plugins/libaudiocd_encoder_wav.so
-%{_libdir}/qt5/plugins/libkcm_audiocd.so
+%{_libdir}/qt5/plugins/kcm_audiocd.so
 %{_libdir}/qt5/plugins/libkio_audiocd.so
 %{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/kservices5/audiocd.desktop

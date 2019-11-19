@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	19.08.3
+Version:	19.11.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -43,7 +43,7 @@ KDE I/O Slave for Audio CDs.
 %{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/kservices5/audiocd.desktop
 %{_datadir}/kservices5/audiocd.protocol
-%{_datadir}/metainfo/org.kde.kio_audiocd.appdata.xml
+%{_datadir}/metainfo/org.kde.kio_audiocd.metainfo.xml
 %{_datadir}/solid/actions/solid_audiocd.desktop
 %{_datadir}/config.kcfg/audiocd_flac_encoder.kcfg
 %{_datadir}/config.kcfg/audiocd_lame_encoder.kcfg
@@ -99,5 +99,4 @@ based on %{name}.
 %find_lang kcmaudiocd
 %find_lang kio_audiocd
 %find_lang audiocd --with-html
-%find_lang kioslave5 --with-html
 cat *.lang >all.lang

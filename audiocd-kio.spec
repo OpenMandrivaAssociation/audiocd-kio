@@ -2,8 +2,8 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	20.03.90
-Release:	2
+Version:	20.04.0
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2

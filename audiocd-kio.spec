@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	20.04.1
+Version:	20.04.2
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -96,7 +96,7 @@ based on %{name}.
 %find_lang audiocd_encoder_lame
 %find_lang audiocd_encoder_opus
 %find_lang audiocd_encoder_vorbis
-%find_lang kcmaudiocd
+%find_lang kcmaudiocd --with-html
 %find_lang kio_audiocd
 %find_lang audiocd --with-html
 cat *.lang >all.lang

@@ -3,7 +3,7 @@
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
 Version:	20.12.1
-Release:	1
+Release:	2
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -26,7 +26,9 @@ BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	lame
 Conflicts:	kdemultimedia4-core < 3:4.5.71
+Recommends:	lame
 
 %description
 KDE I/O Slave for Audio CDs.

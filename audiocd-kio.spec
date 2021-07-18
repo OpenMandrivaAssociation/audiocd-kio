@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	21.04.2
+Version:	21.07.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -44,7 +44,6 @@ KDE I/O Slave for Audio CDs.
 %{_libdir}/qt5/plugins/kf5/kio/audiocd.so
 %{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/kservices5/audiocd.desktop
-%{_datadir}/kservices5/audiocd.protocol
 %{_datadir}/metainfo/org.kde.kio_audiocd.metainfo.xml
 %{_datadir}/solid/actions/solid_audiocd.desktop
 %{_datadir}/config.kcfg/audiocd_flac_encoder.kcfg

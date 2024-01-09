@@ -4,7 +4,6 @@ Summary:	KDE I/O Slave for Audio CDs
 Name:		plasma6-audiocd-kio
 Version:	24.01.85
 Release:	1
-Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
@@ -12,11 +11,10 @@ Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/audioc
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
-BuildRequires:	cmake(KF6Cddb)
-BuildRequires:	cmake(KF6CompactDisc)
+BuildRequires:	cmake(KCddb6)
+BuildRequires:	cmake(KCompactDisc6)
 BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6KCMUtils)
-BuildRequires:	cmake(KF6KDELibs4Support)
 BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6KIO)
@@ -27,7 +25,6 @@ BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	lame
-Conflicts:	kdemultimedia4-core < 3:4.6.71
 Recommends:	lame
 
 %description
@@ -54,7 +51,7 @@ KDE I/O Slave for Audio CDs.
 
 #------------------------------------------------------------------------------
 
-%define audiocdplugins_major 6
+%define audiocdplugins_major 5
 %define libaudiocdplugins %mklibname audiocdplugins %{audiocdplugins_major}
 
 %package -n %{libaudiocdplugins}
@@ -73,15 +70,14 @@ KDE I/O Slave for Audio CDs library using cdparanoia.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libaudiocdplugins} = %{EVRD}
-Conflicts:	kdemultimedia4-devel < 3:4.8.96
 
 %description devel
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files devel
-%{_kde6_libdir}/libaudiocdplugins.so
-%{_kde6_includedir}/*
+%{_libdir}/libaudiocdplugins.so
+%{_includedir}/*
 
 #--------------------------------------------------------------------
 

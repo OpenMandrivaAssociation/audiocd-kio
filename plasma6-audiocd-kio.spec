@@ -53,7 +53,7 @@ KDE I/O Slave for Audio CDs.
 #------------------------------------------------------------------------------
 
 %define audiocdplugins_major 5
-%define libaudiocdplugins %mklibname audiocdplugins %{audiocdplugins_major}
+%define libaudiocdplugins %mklibname audiocdplugins
 
 %package -n %{libaudiocdplugins}
 Summary:	KDE I/O Slave for Audio CDs library

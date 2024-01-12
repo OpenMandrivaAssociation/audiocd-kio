@@ -2,7 +2,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		plasma6-audiocd-kio
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2

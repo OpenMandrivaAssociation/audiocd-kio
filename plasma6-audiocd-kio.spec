@@ -1,13 +1,20 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		plasma6-audiocd-kio
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/multimedia/audiocd-kio/-/archive/%{gitbranch}/audiocd-kio-%{gitbranchd}.tar.bz2#/audiocd-kio-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/audiocd-kio-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -83,7 +90,7 @@ based on %{name}.
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n audiocd-kio-%{version}
+%autosetup -p1 -n audiocd-kio-%{?git:%{gitbranchd}}%{!?git:%{version}}
 
 %build
 %cmake \

@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	KDE I/O Slave for Audio CDs
-Name:		plasma6-audiocd-kio
+Name:		audiocd-kio
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE

@@ -5,7 +5,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -35,10 +35,15 @@ BuildRequires:	pkgconfig(alsa)
 BuildRequires:	lame
 Recommends:	lame
 
+%rename plasma6-audiocd-kio
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KDE I/O Slave for Audio CDs.
 
-%files -f all.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kio_audiocd.categories
 %{_libdir}/qt6/plugins/libaudiocd_encoder_flac.so
 %{_libdir}/qt6/plugins/libaudiocd_encoder_lame.so
@@ -86,25 +91,3 @@ based on %{name}.
 %files devel
 %{_libdir}/libaudiocdplugins.so
 %{_includedir}/*
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n audiocd-kio-%{?git:%{gitbranchd}}%{!?git:%{version}}
-
-%build
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-%ninja
-
-%install
-%ninja_install -C build
-%find_lang audiocd_encoder_flac
-%find_lang audiocd_encoder_lame
-%find_lang audiocd_encoder_opus
-%find_lang audiocd_encoder_vorbis
-%find_lang kcmaudiocd --with-html
-%find_lang kio_audiocd
-%find_lang audiocd --with-html
-cat *.lang >all.lang

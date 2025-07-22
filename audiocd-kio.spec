@@ -83,6 +83,7 @@ KDE I/O Slave for Audio CDs library using cdparanoia.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libaudiocdplugins} = %{EVRD}
+%rename plasma6-audiocd-kio-devel
 
 %description devel
 This package contains header files needed if you wish to build applications

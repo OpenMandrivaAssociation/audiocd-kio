@@ -6,7 +6,7 @@
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
 Version:	25.04.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio
@@ -65,11 +65,13 @@ KDE I/O Slave for Audio CDs.
 #------------------------------------------------------------------------------
 
 %define audiocdplugins_major 5
+%define oldlibname %mklibname audiocdplugins 5
 %define libaudiocdplugins %mklibname audiocdplugins
 
 %package -n %{libaudiocdplugins}
 Summary:	KDE I/O Slave for Audio CDs library
 Group:		System/Libraries
+Obsoletes:	%{oldlibname} < 4:0
 
 %description -n %{libaudiocdplugins}
 KDE I/O Slave for Audio CDs library using cdparanoia.

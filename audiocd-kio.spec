@@ -6,7 +6,7 @@
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
 Version:	25.08.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 Url:		https://projects.kde.org/projects/kde/kdemultimedia/audiocd-kio

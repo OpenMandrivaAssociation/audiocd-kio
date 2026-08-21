@@ -5,7 +5,7 @@
 
 Summary:	KDE I/O Slave for Audio CDs
 Name:		audiocd-kio
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -38,6 +38,7 @@ Recommends:	lame
 %rename plasma6-audiocd-kio
 
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
@@ -45,11 +46,11 @@ KDE I/O Slave for Audio CDs.
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kio_audiocd.categories
-%{_libdir}/qt6/plugins/libaudiocd_encoder_flac.so
-%{_libdir}/qt6/plugins/libaudiocd_encoder_lame.so
-%{_libdir}/qt6/plugins/libaudiocd_encoder_opus.so
-%{_libdir}/qt6/plugins/libaudiocd_encoder_vorbis.so
-%{_libdir}/qt6/plugins/libaudiocd_encoder_wav.so
+%{_libdir}/qt6/plugins/audiocd/libaudiocd_encoder_flac.so
+%{_libdir}/qt6/plugins/audiocd/libaudiocd_encoder_lame.so
+%{_libdir}/qt6/plugins/audiocd/libaudiocd_encoder_opus.so
+%{_libdir}/qt6/plugins/audiocd/libaudiocd_encoder_vorbis.so
+%{_libdir}/qt6/plugins/audiocd/libaudiocd_encoder_wav.so
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
 %{_libdir}/qt6/plugins/kf6/kio/audiocd.so
 %{_datadir}/konqsidebartng/virtual_folders/services/audiocd.desktop
